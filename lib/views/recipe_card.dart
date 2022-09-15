@@ -66,7 +66,7 @@ class RecipeCard extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.star, color: Colors.amber, size: 15),
+                    const Icon(Icons.star, color: Colors.orange, size: 15),
                     const SizedBox(
                       width: 2,
                     ),
@@ -87,7 +87,7 @@ class RecipeCard extends StatelessWidget {
                 child: Row(
                   children: [
                     const Icon(Icons.timelapse_rounded,
-                        color: Colors.amber, size: 15),
+                        color: Colors.orange, size: 15),
                     const SizedBox(
                       width: 2,
                     ),

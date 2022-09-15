@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_food_recipe/views/recipe_card.dart';
 import 'package:flutter_food_recipe/models/recipe.dart';
 import 'package:flutter_food_recipe/controllers/recipe_list.dart';
+import 'package:flutter_food_recipe/views/recipe_details.dart';
 
 class RecipeFoodPage extends StatefulWidget {
   const RecipeFoodPage({Key key}) : super(key: key);
@@ -29,7 +30,9 @@ class _RecipeFoodPageState extends State<RecipeFoodPage> {
         itemBuilder: (context, index) {
           final recipe = _recipes[index];
           return GestureDetector(
-            onTap: () {},
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => RecipeDetails(recipe: recipe),
+            )),
             child: RecipeCard(
               image: recipe.image,
               name: recipe.name,

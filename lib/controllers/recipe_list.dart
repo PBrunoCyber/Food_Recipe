@@ -69,7 +69,7 @@ List<Recipe> recipesFromList() {
     Recipe(
         name: "Betty Crocker",
         image:
-            "https://lh3.googleusercontent.com/0vsAdNvU7nT5kwUSKYNFCKyNY9-jsSUpOWeSk392JpZNrgJpDp9UDx_RKfqH18OvbF2nsMhrLHqlEJQqsYq8uw=s360",
+            "https://lh3.googleusercontent.com/f2YWE1cnuPWp5Zxw8bv7KXcG-CRc7PRq5q8EMrkfs8tKiEd4gS3aJNGiCT7ZUh8vIh5kfxq6DeHH7JfyWbrrGJsN3gYEBOjBEik=s360",
         totalTime: "2 hr 20 min",
         rating: 3.0,
         description:
