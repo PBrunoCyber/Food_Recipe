@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_recipe/models/recipe.dart';
+import 'package:flutter_food_recipe/views/edit_page.dart';
 
 class RecipeDetails extends StatelessWidget {
   final Recipe recipe;
@@ -63,7 +64,11 @@ class RecipeDetails extends StatelessWidget {
                   bottom: 0,
                   right: 20,
                   child: FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => EditPage(recipe: recipe),
+                      ),
+                    ),
                     backgroundColor: Colors.orange,
                     child: const Icon(Icons.edit),
                   ),

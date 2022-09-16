@@ -14,7 +14,7 @@ List<Recipe> recipesFromList() {
         name: "Quick & Easy Strawberry Jam",
         image:
             "https://lh3.googleusercontent.com/wVL4nSKpgf68JYhNT8z-Fd_kfGQnqEPqW7rlr80_iEalCJX8HUM_LOXQgyNGMR_jsHPkesGtY1Mpf7Uh9oYLAQ=s360",
-        totalTime: "25 min",
+        totalTime: "1 hr 25 min",
         rating: 3.0,
         description:
             "Cillum culpa ullamco commodo culpa occaecat do ullamco dolor consectetur mollit exercitation voluptate velit ut. Non consequat commodo ullamco laborum ut anim ea reprehenderit et. Quis est ea amet commodo reprehenderit enim est nostrud anim sit. Consequat pariatur veniam veniam et culpa anim Lorem Lorem laboris consequat. Aliquip excepteur cillum pariatur pariatur laborum anim ullamco proident reprehenderit Lorem mollit elit ea. Fugiat ullamco qui tempor consectetur ullamco deserunt ut mollit consequat. Ullamco quis cupidatat consectetur anim commodo velit minim laborum aliqua velit id velit voluptate."),
