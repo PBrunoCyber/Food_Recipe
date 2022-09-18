@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_recipe/models/recipe.dart';
+import 'package:flutter_food_recipe/views/widgets/rating.dart';
 
 class EditPage extends StatefulWidget {
   final Recipe recipe;
@@ -10,8 +11,7 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
-  List<bool> starId = [false, false, false, false, false];
-  int count = 0;
+  int _rating;
 
   @override
   Widget build(BuildContext context) {
@@ -42,104 +42,11 @@ class _EditPageState extends State<EditPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text("Rating of recipe:"),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    IconButton(
-                      icon: starId[0]
-                          ? const Icon(Icons.star, color: Colors.orange)
-                          : const Icon(Icons.star_border),
-                      onPressed: () {
-                        setState(() {
-                          count = 1;
-                          if (starId[0]) {
-                            for (var i = 1; i < starId.length; i++) {
-                              starId[i] = false;
-                            }
-                          } else {
-                            starId[0] = !starId[0];
-                          }
-                        });
-                      },
-                    ),
-                    IconButton(
-                      icon: starId[1]
-                          ? const Icon(Icons.star, color: Colors.orange)
-                          : const Icon(Icons.star_border),
-                      onPressed: () {
-                        setState(() {
-                          count = 2;
-
-                          if (starId[1]) {
-                            for (var i = 2; i < starId.length; i++) {
-                              starId[i] = false;
-                            }
-                          } else {
-                            for (var i = 0; i < 2; i++) {
-                              starId[i] = true;
-                            }
-                          }
-                        });
-                      },
-                    ),
-                    IconButton(
-                      icon: starId[2]
-                          ? const Icon(Icons.star, color: Colors.orange)
-                          : const Icon(Icons.star_border),
-                      onPressed: () {
-                        setState(() {
-                          count = 3;
-
-                          if (starId[2]) {
-                            for (var i = 3; i < starId.length; i++) {
-                              starId[i] = false;
-                            }
-                          } else {
-                            for (var i = 0; i < 3; i++) {
-                              starId[i] = true;
-                            }
-                          }
-                        });
-                      },
-                    ),
-                    IconButton(
-                      icon: starId[3]
-                          ? const Icon(Icons.star, color: Colors.orange)
-                          : const Icon(Icons.star_border),
-                      onPressed: () {
-                        setState(() {
-                          count = 4;
-
-                          if (starId[3]) {
-                            for (var i = 4; i < starId.length; i++) {
-                              starId[i] = false;
-                            }
-                          } else {
-                            for (var i = 0; i < 4; i++) {
-                              starId[i] = true;
-                            }
-                          }
-                        });
-                      },
-                    ),
-                    IconButton(
-                      icon: starId[4]
-                          ? const Icon(Icons.star, color: Colors.orange)
-                          : const Icon(Icons.star_border),
-                      onPressed: () {
-                        setState(() {
-                          count = 5;
-
-                          if (!starId[4]) {
-                            for (var i = 0; i < 5; i++) {
-                              starId[i] = true;
-                            }
-                          }
-                        });
-                      },
-                    ),
-                  ],
-                ),
+                Rating((rating) {
+                  setState(() {
+                    _rating = rating;
+                  });
+                }),
                 const SizedBox(height: 20),
                 const Text("Name of recipe:"),
                 const SizedBox(height: 5),
@@ -182,3 +89,103 @@ class _EditPageState extends State<EditPage> {
     );
   }
 }
+
+
+// Row(
+//                   mainAxisAlignment: MainAxisAlignment.start,
+//                   children: [
+//                     IconButton(
+//                       icon: starId[0]
+//                           ? const Icon(Icons.star, color: Colors.orange)
+//                           : const Icon(Icons.star_border),
+//                       onPressed: () {
+//                         setState(() {
+//                           count = 1;
+//                           if (starId[0]) {
+//                             for (var i = 1; i < starId.length; i++) {
+//                               starId[i] = false;
+//                             }
+//                           } else {
+//                             starId[0] = !starId[0];
+//                           }
+//                         });
+//                       },
+//                     ),
+//                     IconButton(
+//                       icon: starId[1]
+//                           ? const Icon(Icons.star, color: Colors.orange)
+//                           : const Icon(Icons.star_border),
+//                       onPressed: () {
+//                         setState(() {
+//                           count = 2;
+
+//                           if (starId[1]) {
+//                             for (var i = 2; i < starId.length; i++) {
+//                               starId[i] = false;
+//                             }
+//                           } else {
+//                             for (var i = 0; i < 2; i++) {
+//                               starId[i] = true;
+//                             }
+//                           }
+//                         });
+//                       },
+//                     ),
+//                     IconButton(
+//                       icon: starId[2]
+//                           ? const Icon(Icons.star, color: Colors.orange)
+//                           : const Icon(Icons.star_border),
+//                       onPressed: () {
+//                         setState(() {
+//                           count = 3;
+
+//                           if (starId[2]) {
+//                             for (var i = 3; i < starId.length; i++) {
+//                               starId[i] = false;
+//                             }
+//                           } else {
+//                             for (var i = 0; i < 3; i++) {
+//                               starId[i] = true;
+//                             }
+//                           }
+//                         });
+//                       },
+//                     ),
+//                     IconButton(
+//                       icon: starId[3]
+//                           ? const Icon(Icons.star, color: Colors.orange)
+//                           : const Icon(Icons.star_border),
+//                       onPressed: () {
+//                         setState(() {
+//                           count = 4;
+
+//                           if (starId[3]) {
+//                             for (var i = 4; i < starId.length; i++) {
+//                               starId[i] = false;
+//                             }
+//                           } else {
+//                             for (var i = 0; i < 4; i++) {
+//                               starId[i] = true;
+//                             }
+//                           }
+//                         });
+//                       },
+//                     ),
+//                     IconButton(
+//                       icon: starId[4]
+//                           ? const Icon(Icons.star, color: Colors.orange)
+//                           : const Icon(Icons.star_border),
+//                       onPressed: () {
+//                         setState(() {
+//                           count = 5;
+
+//                           if (!starId[4]) {
+//                             for (var i = 0; i < 5; i++) {
+//                               starId[i] = true;
+//                             }
+//                           }
+//                         });
+//                       },
+//                     ),
+//                   ],
+//                 ),
