@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_recipe/models/recipe.dart';
-import 'package:flutter_food_recipe/views/widgets/edit_form_widget.dart';
-import 'package:flutter_food_recipe/views/widgets/rating.dart';
+import 'package:flutter_food_recipe/views/widgets/rating_widget.dart';
+import 'package:flutter_food_recipe/views/widgets/text_field_widget.dart';
+import 'package:flutter_food_recipe/views/widgets/drop_down_widget.dart';
 
 class EditPage extends StatefulWidget {
   final Recipe recipe;
@@ -12,8 +13,7 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
-  int _rating;
-
+  int rating = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,27 +46,56 @@ class _EditPageState extends State<EditPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Rating of recipe:"),
-                Rating((rating) {
+                const Text(
+                  "Rating of recipe: ",
+                ),
+                const SizedBox(height: 5),
+                RatingWidget((rating) {
                   setState(() {
-                    _rating = rating;
+                    this.rating = rating;
                   });
                 }),
-                FormEdit(
-                  controller: TextEditingController()
-                    ..text = widget.recipe.name,
-                  label: "Recipe Name:",
-                  hintText: "Type the name of recipe",
-                  maxLines: 1,
-                  heightSizedBox: 50,
+                TextFieldWidget(
+                  "Name of recipe: ",
+                  "Type the name of recipe",
+                  TextEditingController()..text = widget.recipe.name,
+                  1,
+                  55,
+                  ((p0) {}),
                 ),
-                FormEdit(
-                  controller: TextEditingController()
-                    ..text = widget.recipe.description,
-                  label: "Recipe Description:",
-                  hintText: "Type the description of recipe",
-                  maxLines: 8,
-                  heightSizedBox: 200,
+                TextFieldWidget(
+                  "Description of recipe: ",
+                  "Type the description of recipe",
+                  TextEditingController()..text = widget.recipe.description,
+                  8,
+                  200,
+                  ((p0) {}),
+                ),
+                const SizedBox(height: 20),
+                const Text("Time to cook: "),
+                const SizedBox(height: 5),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black38),
+                      borderRadius: BorderRadius.circular(4)),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        DropDownWidget(10, "Year", (value) {}),
+                        const SizedBox(width: 20),
+                        DropDownWidget(11, "Month", (value) {}),
+                        const SizedBox(width: 20),
+                        DropDownWidget(29, "Day", (value) {}),
+                        const SizedBox(width: 20),
+                        DropDownWidget(59, "Minute", (value) {}),
+                        const SizedBox(width: 20),
+                        DropDownWidget(59, "Second", (value) {}),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
